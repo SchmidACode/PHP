@@ -1,53 +1,133 @@
-ï»¿<?PHP
-	$title ='Arrays';
+<?PHP
 
-	$array=[0, 1, 1, 2, 3, 5, 8];
+$title='Arrays';
 
-	$array0 = [];
-	$array1 = array(3,5,8,13.21, 34.55); // Ð¾Ð±ÑŠÑÐ²Ð»ÐµÐ½Ð¸Ðµ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ñ‡ÐµÑ€ÐµÐ· ÑÐ²Ð½Ñ‹Ð¹ Ð²Ñ‹Ð·Ð¾Ð² ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ð°
-	$array2 = [34,55,89,144];// Ð¾Ð±ÑŠÑÐ²Ð»ÐµÐ½Ð¸Ðµ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ñ‡ÐµÑ€ÐµÐ· Ð½ÐµÑÐ²Ð½Ñ‹Ð¹ Ð²Ñ‹Ð·Ð¾Ð² ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ð°
+$array=[0,1,1,2,3,5,8];
+$array0=[];
+$array1= array(3,5,8,13,21); //îáúÿâëåíèå ìàññèâà ÷åðåç ÿâíûé âûçîâ êîíñòðóêòîðà
+$array2=[34,55,89,144]; //îáúÿâëåíèå ÷åðåç íåÿâíûé âûçîâ êîíñòðóêòîðà
+$array2[] = 233; //äîáàâëåíèå â êîíåö ìàññèâà íîâîãî ýëåìåíòà
+unset($array2[4]);
 
-	//$distance_to_sun['Mercury'] = 46000000;
-	//$distance_to_sun['Venus'] = 108000000;
-	//$distance_to_sun['Earth'] = 149000000;
-	$distance_to_sun =
-	[
-		'Mercury' => 46000000,
-		'Venus' => 108000000,
-		'Earth' => 149000000,
-		'Mars' => 249000000,
-		'Jupiter' => 777000000,
-		'Saturn' => 1430000000
-	];
+$arr_hw=[];
 
-	$array2D = 
-	[
-		[0,1,1,2],
-		[3,5,8,13,21],
-		[34,55,89]
-	];
+//$distance_to_sun['Mercury'] = 46000000;
+//$distance_to_sun['Venus'] = 108000000;
+//$distance_to_sun['Earth'] = 149000000;
 
-	$array_random5 = []; // ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ðµ Ð¸Ð·Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ð¾ Ð¿ÑƒÑÑ‚Ð¾Ð³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð° 
-						//Ð´Ð»Ñ Ð¿Ð¾ÑÐ»ÐµÐ´ÑƒÑŽÑ‰ÐµÐ³Ð¾ Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ñ Ñ€Ð°Ð½Ð´Ð¾Ð¼Ð½Ñ‹Ð¼Ð¸ Ñ‡Ð¸ÑÐ»Ð°Ð¼Ð¸
-	$array_random10 = []; // ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ðµ Ð¸Ð·Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ð¾ Ð¿ÑƒÑÑ‚Ð¾Ð³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð° 
-						//Ð´Ð»Ñ Ð¿Ð¾ÑÐ»ÐµÐ´ÑƒÑŽÑ‰ÐµÐ³Ð¾ Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ñ Ñ€Ð°Ð½Ð´Ð¾Ð¼Ð½Ñ‹Ð¼Ð¸ Ñ‡Ð¸ÑÐ»Ð°Ð¼Ð¸
+$distance_to_sun =
+[
+	'Mercury' => 46000000,
+	'Venus' => 108000000,
+	'Earth' => 149000000,
+	'Mars' => 249000000,
+	'Jupiter' => 777000000,
+	'Saturn' => 1430000000
+];
 
-	function print_array($array)
+$array2D=
+[
+	[0,1,1,2],
+	[3,5,8,13,21],
+	[34,55,89]
+];
+
+$arr_hw2D=[];
+function print_array($array)
+{
+	echo '<pre>';
+	//for($i=0;$i<count($array);$i++)
+	//	echo "$array[$i]\t";
+	foreach($array as $iterator)
+		echo "$iterator\t";
+	echo '</pre>';
+}
+
+function print_array_pre($array)
+{
+	echo '<pre>';
+	print_r($array1);
+	echo '</pre>';
+}
+
+function max_in_arr($arr)
+{
+	rsort($arr);
+	return $arr[0];
+}
+function min_in_arr($arr)
+{
+	sort($arr);
+	return $arr[0];
+}
+function sum_arr($arr)
+{
+	$sum=0;
+	foreach($arr as $iterator)
+		{
+			$sum+=$iterator;
+		}
+	return $sum;
+}
+function avg_arr($arr)
+{
+	return sum_arr($arr)/count($arr);
+}
+
+function print_array2D($arr)
+{
+	foreach($arr as $iterator)
+		{
+			foreach($iterator as $iterator)
+			{
+				echo"$iterator\t";
+			}
+			echo'<br>';
+		}
+}
+function max_in_arr2D($arr)
+{
+	$max=$arr[0][0];
+	foreach($arr as $iterator)
+		{
+			foreach($iterator as $iterator)
+			{
+				if ($iterator>$max) $max=$iterator;
+			}
+		}
+	return $max;
+}
+function min_in_arr2D($arr)
+{
+	$min=$arr[0][0];
+	foreach($arr as $iterator)
+		{
+			foreach($iterator as $iterator)
+			{
+				if ($iterator<$min) $min=$iterator;
+			}
+		}
+	return $min;
+}
+function sum_arr2D($arr)
+{
+	$sum=0;
+	foreach($arr as $iterator)
 	{
-		echo '<pre>';
-		//for($i=0;$i<count($array);$i++)
-		//	echo "$array[$i]\t";
-		foreach($array as $iterator)
-			echo "$iterator\t";
-		echo '<pre>'; 
+		$sum+=sum_arr($iterator);
 	}
-
-	function print_array_pre($array)
+	return $sum;
+}
+function avg_arr2D($arr)
+{
+	$count=0;
+	foreach($arr as $iterator)
 	{
-		echo '<pre>';
-		print_r($array);
-		echo '<pre>';
+		$count+=count($iterator);
 	}
+	return sum_arr2D($arr)/$count;
+}
 
-	require 'index.view.php';
-?>
+
+
+require 'index.view.php';

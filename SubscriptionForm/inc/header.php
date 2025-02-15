@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/style.css">
-    <?=__DIR__?>
-    <title>Subdcribe</title>
+    <title>Subscribe</title>
 </head>
 <body>
     <main>

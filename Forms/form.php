@@ -1,13 +1,9 @@
 <?php
-
-	echo "<h1>Бобро пожаловать, " . $_POST['name'] . ", спасибо за регистрацию</h1>";	
-	
-	echo '<pre>';
-	echo '<hr>';
-	var_dump($_POST['name']);
-	var_dump($_POST['password']);
-	var_dump($_POST['email']);
-	echo '<hr>';
-	print_r($GLOBALS);
-	echo '</pre>';
+echo '<pre>';
+//print_r($GLOBALS);
+echo '<h1>Добро пожаловать '.$_POST['username'].', спасибо за регистрацию</h1>';
+echo '<hr>';
+var_dump($_POST['username']);
+var_dump($_POST['email']);
+echo '</pre>';
 ?>

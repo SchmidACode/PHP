@@ -1,4 +1,5 @@
-<?php
+﻿<?php
 //print_r($_POST);
-echo "Ваш любимый цвет: " . $_POST['color'];
+//var_dump($_POST['color']);
+echo 'Ваш любимый цвет: '.$_POST['color'];
 ?>
