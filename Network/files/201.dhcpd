@@ -1,0 +1,12 @@
+host 00-19-99-b4-c2-ae { hardware ethernet 192.168.100.21; }
+host 00-19-99-ae-a8-8e { hardware ethernet 192.168.100.22; }
+host 00-19-99-b5-e9-9b { hardware ethernet 192.168.100.23; }
+host 00-19-99-b4-a2-ed { hardware ethernet 192.168.100.24; }
+host 00-19-99-ad-4f-51 { hardware ethernet 192.168.100.25; }
+host 00-19-99-dc-52-80 { hardware ethernet 192.168.100.26; }
+host 00-19-99-b4-a2-fb { hardware ethernet 192.168.100.27; }
+host 00-19-99-b2-b3-e6 { hardware ethernet 192.168.100.28; }
+host 00-19-99-ae-a5-59 { hardware ethernet 192.168.100.29; }
+host 00-19-99-dc-52-77 { hardware ethernet 192.168.100.30; }
+host 00-19-99-ac-b8-11 { hardware ethernet 192.168.100.31; }
+host 00-19-99-b5-e9-4d { hardware ethernet 192.168.100.32; }
