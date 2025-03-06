@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = 'Quitz PD_321';
 
 $questions =
@@ -25,5 +26,8 @@ $correct_answers =
         1,
 		2
 	];
+$user_answers = 
+	[
 
+	]
 ?>
