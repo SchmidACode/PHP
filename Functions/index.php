@@ -1,104 +1,93 @@
-<?php
+<?PHP
 
+//declare(strict_types=1);    //¬ключаем строгую типизацию
 
 $title = 'PHP Functions';
 
+//function exchange(&$a, &$b)
+//{
+//    $buffer = $a;
+//    $a = $b;
+//    $b = $buffer;
+//}
 
-function print_values($a,$b,$delimiter = ';')
+$exchange = fn(&$a, &$b) => [$a, $b] = [$b, $a];
+//$exchange = fn(&$a, &$b) => [$a, $b] = [$b, $a];
+
+
+function print_values($a, $b, $delimiter = ';')
 {
-	echo '<pre>';
+    echo '<pre>';
     echo "$a\t$b$delimiter";
     echo '</pre>';
 }
+
 function sum_values(...$values)
 {
-	$sum=0;
-	foreach($values as $iteration)
-		$sum+=$iteration;
-	return $sum;
+    $sum = 0;
+    for ($i = 0; $i < count($values); $i++) {
+        $sum += $values[$i];
+    }
+    return $sum;
 }
-function Fibonacci($n)
+function FillRand(&$arr, $size = 5, $minRand = 0, $maxRand = 100)
 {
-	if($n==1||$n==2) return 1;
-	return Fibonacci($n-1)+Fibonacci($n-2);
-}
-function dec_to_bin($num)
-{
-	$bin=0;
-	$k=1;
-	while($num)
-	{
-		$bin+=($num%2)*$k;
-		$k*=10;
-		$num=intdiv($num,2);
-	}
-	return $bin;
-}
-function dec_to_hex($dec) 
- { 
-     $sign = "";$h="";
-     if( $dec < 0){ $sign = "-"; $dec = abs($dec); }
-
-     $hex = Array( 0 => 0, 1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 
-                   6 => 6, 7 => 7, 8 => 8, 9 => 9, 10 => 'A', 
-                   11 => 'B', 12 => 'C', 13 => 'D', 14 => 'E',    
-                   15 => 'F' );
-     do 
-     { 
-         $h = $hex[($dec%16)] . $h; 
-         $dec = intdiv($dec,16); 
-     } 
-     while( $dec >= 1 );
-
-     return $sign . $h; 
- }
-
- function FillRand(&$arr, $size=5, $minRand=0,$maxRand=100)
-{
-	for($i=0; $i<$size;$i++)
-	{
-		$arr[$i]=rand($minRand,$maxRand);
-	}
+    for ($i = 0; $i < $size; $i++) {
+        $arr[$i] = rand($minRand, $maxRand);
+    }
 }
 function PrintArr($arr)
 {
-	echo '<pre>';
-	for($i=0;$i<count($arr);$i++)
-	{
-		echo "$arr[$i]\t";
-	}
-	echo '</pre>';
+    echo '<pre>';
+    for ($i = 0; $i < count($arr); $i++) {
+        echo "$arr[$i]\t";
+    }
+    echo '</pre>';
 }
 
 function increment()
 {
-	static $counter = 0;
-	$counter+=10;
-	return $counter;
+    static $counter = 0;
+    $counter += 10;
+    return $counter;
+}
+function decrement()
+{
+    static $counter = 0;
+    $counter -= 10;
+    return $counter;
 }
 
 function summator($limit)
 {
-	static $sum=0;
-	$sum++;
-	if($sum<$limit) summator($limit);
-	return $sum;
+    static $sum = 0;
+    $sum++;
+    if ($sum < $limit)
+        summator($limit);
+    return $sum;
 }
 
+/////////////////////////////////////////////////////////
 
-function sum(int $a, int $b): int | float
+
+function sum(int $a, int $b):int
 {
-	return $a+$b;
+    return $a + $b;
 }
+//function sum(float $a, float $b): float
+//{
+//    return $a + $b;
+//
 
-$arrow_function = fn () => 'Hello in Arrow Function';
-$non_arrow_function = function () {return 'Hello in not Arrow Function!';};
+$arrow_function     = fn () => 'Hello! I am Arrow Function!';   //Lambda
+$non_arrow_function = function () { return 'Hello! I am NOT arrow function'; };
 
 $PI = 3.14;
-$circle_area = function (float $radius) use ($PI)
-{
-	return $PI*$radius*$radius;
-};
+//$circle_area = function (float $radius) use ($PI)
+//{
+//    return $PI * $radius * $radius;
+//};
+ $circle_area = fn (float $radius) => $PI * $radius * $radius;
 
-$exchange = fn(&$a,&$b) => [$a,$b]=[$b,$a];
+
 require 'index.view.php';

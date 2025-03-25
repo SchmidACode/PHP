@@ -9,16 +9,20 @@
     <form action="form.php" method="post">
         <div>
             <label for="username">Username</label>
-            <input type="text" id="username" name="username">
+            <input type="text" id="user" name="name">
         </div>
+
         <div>
             <label for="password">Password</label>
             <input type="password" id="password" name="password">
         </div>
-        <div>  
+
+
+        <div>
             <label for="email">E-mail</label>
             <input type="email" id="email" name="email">
-        </div>  
+        </div>
+
         <div>
             <input type="submit" value="Register" />
         </div>

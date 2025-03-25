@@ -1,3 +1,3 @@
 <?php
-include 'constants.php';
+include_once 'constants.php';
 ?>

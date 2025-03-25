@@ -3,46 +3,61 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title><?=$title;?></title>
+    <title><?= $title; ?></title>
 </head>
 <body>
-    <h1><?=$title;?></h1>
+    <h1><?= $title; ?></h1>
+
+    <!--<?php
+    ////////////////////////////[$a, $b] = [2, 3];
+    ////////////////////////////print_values($a, $b, '.');
+    ////////////////////////////exchange($a, $b);
+    ////////////////////////////print_values($a, $b, '.');
+    ////////////////////////////
+    ////////////////////////////echo sum_values(3, 5, 8, 13, 21);
+    ////////////////////////////echo '<hr>';
+    ////////////////////////////
+    ////////////////////////////
+    ////////////////////////////$arr = array();
+    ////////////////////////////FillRand($arr, maxRand:1000);
+    //////////////////////////////FillRand(maxRand:1000, $arr);//Error
+    ////////////////////////////PrintArr($arr);
+    ////////////////////////////echo '<hr>';
+    ////////////////////////////
+    ////////////////////////////echo '<pre>';
+    //////////////////////////////print_r($GLOBALS);
+    //////////////////////////////print_r($_SERVER);
+    //////////////////////////////$_GET;
+    //////////////////////////////$_POST;
+    //////////////////////////////$_COOKIE;
+    //////////////////////////////$_FILES;    //Создержит информацию о загруженных файлах
+    //////////////////////////////print_r($_ENV); //Содержит информацию об окружении скрипта
+    ////////////////////////////
+    ////////////////////////////echo increment() . "\n";
+    ////////////////////////////echo increment() . "\n";
+    ////////////////////////////echo increment() . "\n";
+    ////////////////////////////echo decrement() . "\n";
+    ////////////////////////////echo decrement() . "\n";
+    ////////////////////////////echo decrement() . "\n";
+    ////////////////////////////echo '<hr>';
+    ////////////////////////////echo summator(10);
+    ////////////////////////////echo '<hr>';
+    ////////////////////////////echo '</pre>';
+    ////////////////////////////
+    ////////////////////////////?>-->
 
     <?php
-        [$a,$b]=[2,3];
-        print_values($a,$b);
-        $exchange($a,$b);
-        print_values($a,$b);
-
-        echo sum_values(3,5,8,13,21);
-        echo '<br />';
-        for($i = 1;$i<10;$i++) {
-          echo Fibonacci($i),'<br />';
-        }
-        echo dec_to_bin(7);
-        echo '<br />';
-        echo dec_to_hex(26);
-
-
-    $arr=[];
-	FillRand(arr:$arr, maxRand:1000);
-	PrintArr($arr);
-
-	echo increment()."\n";
-	echo increment()."\n";
-	echo increment()."\n";
-	echo increment()."\n";
-	echo increment()."\n";
-	echo '<hr>';
-	echo summator(10)."\n";
-	echo '<hr>';
-	?>
-
-	<?php
-	echo sum((int)2.7, (int)3.14)."\n";
-    echo $arrow_function()."\n";
-    echo $non_arrow_function()."\n";
-    echo $circle_area(5)."\n";
-	?>
+    echo '<pre>';
+    //echo sum((int)2.7, (int)3.14);
+    //echo $arrow_function();
+    //echo $non_arrow_function();
+    echo $circle_area(5);
+    
+    [$a, $b] = [2, 3];
+    print_values($a, $b, '.');
+    $exchange($a, $b);
+    print_values($a, $b, '.');
+    echo '</pre>';
+    ?>
 </body>
 </html>

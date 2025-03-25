@@ -1,5 +1,6 @@
+
 <form action="index.php" method="post">
-	<h1>CheckBoxes</h1>
+	<h1>Checkboxes</h1>
 	<input type="checkbox" name="colors[]" value="red" id="color_red">
 	<label for="color_red">Red</label>
 
@@ -8,7 +9,8 @@
 
 	<input type="checkbox" name="colors[]" value="blue" id="color_blue">
 	<label for="color_blue">Blue</label>
+
 	<div>
-	<input type="submit" value="Submit">
+	<input type="submit" value="Submit"/>
 	</div>
 </form>

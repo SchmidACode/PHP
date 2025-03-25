@@ -1,5 +1,5 @@
 <?php
-$config = require_once __DIR__.'/../config/app.php';
+$config = require_once __DIR__ . '/../config/app.php';
 $recipient = $config['mail']['recipient'];
 
 echo '<pre>';
@@ -13,11 +13,10 @@ $message = $_POST['message'];
 
 $headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-type: text/html; charset=utf-8';
-$headers[] = "To:".{$recipient};
-$headers[] = "From:".{$contact_email};
-$header = implode('\r\n',$headers);
+$headers[] = "To: {$recipient}";
+$headers[] = "From:{$contact_email}";
+$header = implode('\r\n', $headers);
 
-if(mail('liney13@mail.ru',$subject,$message,$header))
-echo 'Message SEND!';
-
+if (mail('poltavastep2018@gmail.com', $subject, $message, $header))
+	echo 'Message sent';
 ?>

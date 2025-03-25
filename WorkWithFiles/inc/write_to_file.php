@@ -1,7 +1,7 @@
 <?php
 $filename = '../files/WriteToFile.txt';
-$file = fopen($filename,'w');
-fwrite($file,'Hello files from PHP!\nThis is write Message');
-echo 'File size: '.fileofsize($filename);
+$file = fopen('../files/WriteToFile.txt', 'w');
+fwrite($file,'Hello files from PHP!\nThis is a write message');
+echo 'File size: ' . filesize($filename) . ' Bytes';
 fclose($file);
 ?>

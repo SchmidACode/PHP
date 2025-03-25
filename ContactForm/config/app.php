@@ -1,6 +1,6 @@
 <?php
 return
 	[
-	'mail' => ['recipient' => 'liney13@mail.ru']
+	'mail' => ['recipient' => 'poltavastep2018@gmail.com']
 	];
 ?>
